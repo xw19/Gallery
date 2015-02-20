@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+nature:
+  name: Nature
+  description: Nature Landscapes
+  purity: safe
+
+two:
+  name: MyString
+  description: MyText
+  purity: MyString
