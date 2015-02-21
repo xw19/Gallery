@@ -1,0 +1,5 @@
+= @category.name
+= @category.description
+= link_to "Edit", edit_category_path(@category)
+span
+  = link_to "Delete", category_path(@category), method: "delete", data: {confirm: "Are you sure to delete ?"}

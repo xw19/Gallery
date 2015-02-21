@@ -1,0 +1,9 @@
+.main
+  h1 Categories
+  .grid-items-lines
+    - @categories.each do |category|
+      = link_to(category, html_options = {class: 'grid-item'}) do
+        h2 = category.name
+        p = category.description
+        div class="#{category.purity} purity"
+          = category.purity

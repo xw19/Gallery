@@ -1,0 +1,23 @@
+.form-container {
+  @include outer-container(60%);
+  @include row();
+  @include margin(20px null 20px null);
+    input, textarea {
+      padding: 5px;
+      border: 2px solid #585858;
+      @include margin(5px);
+      width: 100%;
+    }
+    label {
+      display: block;
+      color: #585858;
+      text-transform: capitilize;
+      font-size: 18px;
+    }
+    input[type=submit] {
+      background-color: #2E9AFE;
+    }
+    input[type=radio] {
+      width: 10px;
+    }
+}

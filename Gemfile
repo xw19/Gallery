@@ -28,6 +28,9 @@ gem 'slim'
 gem 'bourbon'
 # Grid
 gem 'neat'
+#for uploading
+gem 'carrierwave', '~> 0.10.0'
+gem 'simple_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

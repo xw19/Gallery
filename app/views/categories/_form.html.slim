@@ -1,0 +1,6 @@
+.form-container
+  = simple_form_for @category do |f|
+    = f.input :name, wrapper_html: { class: 'input_field' }
+    = f.input :description, as: :text, wrapper_html: { id: 'input_field' }
+    = f.input :purity, collection: [['Safe' , 'safe'], ['Sketchy', 'sketchy'], ['NSFW', 'nsfw']], as: :radio_buttons,  wrapper_html: { class: 'input_field' }
+    = f.button :submit, class: "submit_button"

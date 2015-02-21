@@ -16,3 +16,29 @@ a {
 .grid-items {
   padding-top: 7px;
 }
+.main {
+  @include outer-container;
+}
+.purity {
+  @include border-width(2px);
+  @include border-style(solid);
+  @include border-top-radius(5px);
+  @include border-right-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  text-align: center;
+  width: 70px;
+}
+.safe {
+  @include border-color(green);
+  color: green;
+}
+.sketchy {
+  @include border-color(yellow);
+  color: yellow;
+}
+
+.nsfw {
+  @include border-color(red);
+  color: red;
+}
