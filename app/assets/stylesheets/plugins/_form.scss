@@ -11,7 +11,7 @@
     label {
       display: block;
       color: #585858;
-      text-transform: capitilize;
+      text-transform: capitalize;
       font-size: 18px;
     }
     input[type=submit] {
@@ -20,4 +20,14 @@
     input[type=radio] {
       width: 10px;
     }
+}
+.field_with_errors {
+  input {
+    border: 2px solid red;
+  }
+}
+.error {
+  padding: 5px;
+  color: #FF0040;
+  text-transform: capitalize;
 }

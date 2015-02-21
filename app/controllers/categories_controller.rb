@@ -13,7 +13,6 @@ class CategoriesController < ApplicationController
       flash[:success] = "Category created successfully"
       redirect_to @category
     else
-      flash.now[:failure] = "Some error occured"
       render 'new'
     end
   end
@@ -28,7 +27,6 @@ class CategoriesController < ApplicationController
       flash[:success] = "Category updated"
       redirect_to @category
     else
-      flash.now[:faliure] = "Some error occured"
       render 'edit'
     end
   end
@@ -41,7 +39,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.friendly.find(params[:id])
   end
 
   private
