@@ -40,6 +40,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.friendly.find(params[:id])
+    @pictures = @category.pictures
   end
 
   private

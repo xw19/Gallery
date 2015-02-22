@@ -1,6 +1,6 @@
 class PicturesController < ApplicationController
   def index
-    @pictures = Picture.order("created_by desc")
+    @pictures = Picture.order("created_at desc")
   end
 
   def new
