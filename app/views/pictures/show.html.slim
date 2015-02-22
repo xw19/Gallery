@@ -1,0 +1,7 @@
+.main
+  h1 = @picture.name
+  p class="photo_desc"
+    | Description:
+    = @picture.description if @picture.description
+
+  = image_tag(@picture.photo, alt: @picture.name, width: 800, height: 600, class: "photo")

@@ -42,3 +42,10 @@ a {
   @include border-color(red);
   color: red;
 }
+.photo {
+  width: 100%;
+  border: 2px solid #333;
+}
+.photo_desc {
+  margin: 10px 0;
+}
