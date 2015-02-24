@@ -49,3 +49,24 @@ a {
 .photo_desc {
   margin: 10px 0;
 }
+
+.flash {
+  padding: 5px 10px;
+  color: #fff;
+  @include outer-container;
+  @include border-top-radius(5px);
+  @include border-right-radius(5px);
+  @include border-bottom-radius(5px);
+  @include border-left-radius(5px);
+  @include background(linear-gradient(#0080FF, #013ADF));
+  margin: 5px auto;
+}
+.flash-notice {
+  @include background(linear-gradient(#53A430, #417A28));
+}
+.flash-alert {
+  @include background(linear-gradient(#B57135, #D75125));
+}
+.flash-success {
+  @extend .flash-notice;
+}

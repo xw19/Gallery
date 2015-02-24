@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :check_admin
+
   def index
     @categories = Category.order('name asc')
   end
@@ -49,5 +51,10 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:name, :description, :purity)
   end
 
-
+  def check_admin
+    unless is_admin?
+      flash[:alert] = "Access Denied"
+      redirect_to root_path
+    end
+  end
 end
