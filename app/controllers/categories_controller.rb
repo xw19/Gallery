@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :check_admin
+  before_action :check_admin, except: [:index, :show]
 
   def index
     @categories = Category.order('name asc')

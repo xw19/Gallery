@@ -6,4 +6,11 @@ class Picture < ActiveRecord::Base
   validates :description, length: { maximum: 70 }
   validates :photo, presence: true
 
+  before_save :check_category
+
+
+  def check_category
+    self.category = Category.find_or_create_by!(name: "misc", description: "The misc category", purity: "safe")
+  end
+
 end
