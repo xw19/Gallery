@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'friendly_id', '~> 5.1.0'
 gem 'mini_magick'
 gem 'devise'
+#gem 'will_paginate'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

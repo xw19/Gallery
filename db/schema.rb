@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222100121) do
+ActiveRecord::Schema.define(version: 20150226035213) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150222100121) do
 
   add_index "categories", ["name"], name: "index_categories_on_name", unique: true, using: :btree
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "picture_id", limit: 4
+    t.integer  "user_id",    limit: 4
+    t.text     "body",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "comments", ["picture_id"], name: "index_comments_on_picture_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -70,6 +81,8 @@ ActiveRecord::Schema.define(version: 20150222100121) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "pictures"
+  add_foreign_key "comments", "users"
   add_foreign_key "pictures", "categories"
   add_foreign_key "pictures", "users"
 end

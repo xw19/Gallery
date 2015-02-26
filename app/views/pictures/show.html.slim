@@ -10,3 +10,10 @@
     .pic-tools
         = link_to "Edit", edit_picture_path(@picture)
         = link_to "Destroy", picture_path(@picture), method: "delete", data: { confirm: 'Are you sure ?' }
+  h3 Comments
+  .comments#comments
+    = render "comments"
+  .form-container
+    = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
+      = f.input :body, as: :text
+      = f.button :submit
