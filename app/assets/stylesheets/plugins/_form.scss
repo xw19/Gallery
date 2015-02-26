@@ -2,7 +2,7 @@
   @include outer-container(60%);
   @include row();
   @include margin(20px null 20px null);
-    input, textarea {
+    input, textarea, select {
       padding: 5px;
       border: 2px solid #585858;
       @include margin(5px);

@@ -10,7 +10,9 @@ class Picture < ActiveRecord::Base
 
 
   def check_category
-    self.category = Category.find_or_create_by!(name: "misc", description: "The misc category", purity: "safe")
+    unless self.category
+      self.category = Category.find_or_create_by!(name: "misc", description: "The misc category", purity: "safe")
+    end
   end
 
 end

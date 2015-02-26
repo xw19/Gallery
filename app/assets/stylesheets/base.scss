@@ -70,3 +70,6 @@ a {
 .flash-success {
   @extend .flash-notice;
 }
+.form-inputs, .form-actions {
+  @extend .form-container
+}
