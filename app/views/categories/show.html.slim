@@ -1,9 +1,10 @@
 .main
   h1 = @category.name
   p = @category.description
-  .pic-tools
-    = link_to "Edit", edit_category_path(@category)
-    = link_to "Delete", category_path(@category), method: "delete", data: {confirm: "Are you sure to delete ?"}
+  - if is_admin?
+    .pic-tools
+      = link_to "Edit", edit_category_path(@category)
+      = link_to "Delete", category_path(@category), method: "delete", data: {confirm: "Are you sure to delete ?"}
   .add-pic
     = link_to "Add picture", new_picture_path
   == render 'pictures/list'

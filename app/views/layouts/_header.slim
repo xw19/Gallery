@@ -1,29 +1,15 @@
 header.navigation role="banner"
   .navigation-wrapper
-    a.logo href="javascript:void(0)"
+    a.logo href="/"
       img alt=("Logo Image") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" /
     a#js-mobile-menu.navigation-menu-button href="javascript:void(0)"  MENU
     nav role="navigation"
       ul#js-navigation-menu.navigation-menu.show
-        li.nav-link
-          a href="javascript:void(0)"  Products
-        li.nav-link
-          a href="javascript:void(0)"  About Us
-        li.nav-link
-          a href="javascript:void(0)"  Contact
         li.nav-link.more
-          a href="javascript:void(0)"  Categories
+          a href="/categories"  Categories
           ul.submenu
             - Category.all.map do |category|
               li = link_to category.name, category
-    .navigation-tools
-      .search-bar
-        form role="search"
-          input placeholder=("Enter Search") type="search" /
-          button type="submit"
-            img alt=("Search Icon") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" /
-    nav role="navigation"
-      ul#js-navigation-menu.navigation-menu.show
         - if user_signed_in?
           li.nav-link
             = link_to "Logout", destroy_user_session_path, method: "delete", class: "nav-btns"
@@ -32,3 +18,9 @@ header.navigation role="banner"
             = link_to "Sign up", new_user_registration_path, class: "nav-btns"
           li.nav-link
             = link_to "Sign in", new_user_session_path, class: "nav-btns"
+    .navigation-tools
+      .search-bar
+        form role="search"
+          input placeholder=("Enter Search") type="search" /
+          button type="submit"
+            img alt=("Search Icon") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" /
