@@ -73,3 +73,32 @@ a {
 .form-inputs, .form-actions {
   @extend .form-container
 }
+.pic-tools {
+  background-color: #8181F7;
+  border: 2px solid #0B0B61;
+  margin-bottom: 5px;
+  width: 25%;
+  overflow: hidden;
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 18%;
+    &:hover {
+      color: #40FF00;
+      background-color: #F2F5A9;
+    }
+  }
+}
+.add-pic {
+  a {
+    background-color: #01DF01;
+    border: 2px solid #0C4E07;
+    text-decoration: none;
+    color: #0C4E07;
+    padding: 3px;
+    &:hover, &:active {
+        background-color: #80D509;
+    }
+  }
+  margin: 8px 5px 8px 0;
+}

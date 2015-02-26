@@ -1,7 +1,12 @@
 .main
   h1 = @picture.name
   p class="photo_desc"
-    | Description:
+    strong
+      <span>Description: </span>
     = @picture.description if @picture.description
 
   = image_tag(@picture.photo, alt: @picture.name, width: 800, height: 600, class: "photo")
+  - if user_signed_in? && @picture.user === current_user
+    .pic-tools
+        = link_to "Edit", edit_picture_path(@picture)
+        = link_to "Destroy", picture_path(@picture), method: "delete", data: { confirm: 'Are you sure ?' }

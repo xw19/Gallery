@@ -46,19 +46,10 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
-
   private
 
   def picture_params
     params.require(:picture).permit(:name, :description, :photo, :category_id)
-  end
-
-  def own_user?
-    @picture = Picture.friendly.find(params[:id])
-    unless @picture.user == current_user
-      flash[:danger] = "You dont have permission to edit/destroy"
-      redirect_to @picture
-    end
   end
 
 
