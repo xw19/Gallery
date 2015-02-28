@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def check_user
     @picture = Picture.find(params[:picture_id])
     @comment = @picture.comments.find(params[:id])
-    unless @comment.user === current_user
+    unless @comment.user === current_user || @picture.user === current_user
       redirect_to @picture, alert: "You are not allowed"
     end
   end
