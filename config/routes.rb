@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :categories
+  get "search", to: 'pictures#index'
   resources :pictures do
     resources :comments, only: [:create, :destroy]
   end

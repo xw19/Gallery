@@ -3,7 +3,8 @@ class PicturesController < ApplicationController
   before_action :own_user?, only: [:edit, :update, :destroy]
 
   def index
-    @pictures = Picture.order("created_at desc")
+    @q = Picture.ransack(params[:q])
+    @pictures = @q.result(distinct: true).includes(:comments)
   end
 
   def new
