@@ -1,0 +1,35 @@
+.main
+  h1 Profile
+  - unless @personal.avatar.blank?
+    = image_tag @personal.avatar
+  - else
+    - if @personal.gender == "F"
+      i class="fa fa-female fa-5x"
+    - else
+      i class="fa fa-male fa-5x"
+  table
+    tr
+      td First Name:
+      td = @personal.first_name
+    tr
+      td Last Name:
+      td = @personal.last_name
+    tr
+      td Date of Birth:
+      td = @personal.date_of_birth
+    tr
+      td Gender:
+      td
+        - if @personal.gender == "M"
+          | Male
+        - else
+          | Female
+    tr
+      td About Myself:
+      td = @personal.about_me
+  - if user_signed_in? && @personal.user === current_user
+    .pic-tools
+        = link_to "Edit", edit_personal_path(@personal)
+        = link_to "Destroy", personal_path(@personal), method: "delete", data: { confirm: 'Are you sure ?' }
+  h2 All arts
+  == render 'pictures/list'

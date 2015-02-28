@@ -1,10 +1,22 @@
 .main
   h1 = @picture.name
-  p class="photo_desc"
-    strong
-      <span>Description: </span>
-    = @picture.description if @picture.description
-
+  table class="photo_desc"
+    tr
+      td
+        strong Description:
+      td = @picture.description if @picture.description
+    tr
+      td
+        strong Category:
+      td = link_to @picture.category.name, @picture.category
+    tr
+      td
+        strong Uploaded by:
+      td
+        - if @picture.user.personal
+          = link_to @picture.user.personal.first_name, @picture.user.personal
+        - else
+          = "Anynomous#{@picture.user.id}"
   = image_tag(@picture.photo, alt: @picture.name, width: 800, height: 600, class: "photo")
   - if user_signed_in? && @picture.user === current_user
     .pic-tools

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226035213) do
+ActiveRecord::Schema.define(version: 20150226165049) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -49,6 +49,20 @@ ActiveRecord::Schema.define(version: 20150226035213) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "personals", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.string   "first_name",    limit: 255
+    t.string   "last_name",     limit: 255
+    t.date     "date_of_birth"
+    t.string   "gender",        limit: 255
+    t.text     "about_me",      limit: 65535
+    t.string   "avatar",        limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "personals", ["user_id"], name: "index_personals_on_user_id", using: :btree
+
   create_table "pictures", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "photo",       limit: 255
@@ -83,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150226035213) do
 
   add_foreign_key "comments", "pictures"
   add_foreign_key "comments", "users"
+  add_foreign_key "personals", "users"
   add_foreign_key "pictures", "categories"
   add_foreign_key "pictures", "users"
 end

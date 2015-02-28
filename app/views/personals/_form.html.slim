@@ -1,0 +1,9 @@
+.form-container
+  = simple_form_for @personal do |f|
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :date_of_birth, as: :date
+    = f.input :gender, collection: [["Male", "M"], ["Female", "F"]], as: :radio_buttons
+    = f.input :avatar, as: :file
+    = f.input :about_me, as: :text
+    = f.button :submit

@@ -9,6 +9,9 @@ class Picture < ActiveRecord::Base
 
   before_save :check_category
 
+  def to_param
+    "#{id} #{name}".parameterize
+  end
 
   def check_category
     unless self.category

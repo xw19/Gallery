@@ -1,5 +1,23 @@
 - @picture.comments.each do |comment|
   .comment
+    - if comment.user.personal
+      - unless comment.user.personal.avatar.blank?
+        = image_tag comment.user.personal.avatar_url(:thumb), class: 'avatar-thumb-comment', width: 50, height: 50
+      - else
+        - if comment.user.personal.gender == "F"
+          i class="fa fa-female fa-3x avatar-thumb-comment"
+        - else
+          i class="fa fa-female fa-3x avatar-thumb-comment"
+    - else
+        i class="fa fa-user-secret fa-3x avatar-thumb-comment"
+    - if comment.user === current_user || @picture.user === current_user
+      = link_to picture_comment_path(@picture.id, comment.id), method: :delete, data: { remote: true }, class: 'comment-remove' do
+        <i class="fa fa-times"></i>
+    p.user_name
+      - if comment.user.personal
+        = link_to "#{comment.user.personal.first_name} #{comment.user.personal.last_name}", comment.user.personal
+      - else
+        | Anynomous
+        = comment.user.id
     p = comment.body
-    p = comment.user.email
     p = time_ago_in_words(comment.created_at) + " ago"
