@@ -4,4 +4,4 @@ $ ->
     menuToggle.on "click", (event) ->
         event.preventDefault();
         $('#js-navigation-menu').slideToggle ->
-            $('#js-navigation-menu').removeAttr 'style' if $('#js-navigation-menu').is "hidden"  
+            $('#js-navigation-menu').removeAttr 'style' if $('#js-navigation-menu').is "hidden"

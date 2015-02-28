@@ -1,5 +1,6 @@
 class Personal < ActiveRecord::Base
   belongs_to :user
+  has_many :reports, as: :reportable
   mount_uploader :avatar, AvatarUploader
 
   validates :first_name, presence: true, length: { maximum: 20 }

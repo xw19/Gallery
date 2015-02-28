@@ -31,5 +31,13 @@
     .pic-tools
         = link_to "Edit", edit_personal_path(@personal)
         = link_to "Destroy", personal_path(@personal), method: "delete", data: { confirm: 'Are you sure ?' }
+  h6 class="hreport" Report
+  .report
+    - report = @personal.reports.new
+    = simple_form_for report, data: {confirm: "Are you sure to report this profile ?" } do |f|
+      = f.input :reason, label: "Why do think that this profile must be reported ?"
+      = f.input :reportable_id, as: :hidden, value: report.reportable_id
+      = f.input :reportable_type, as: :hidden, value: report.reportable_type
+      = f.button :submit
   h2 All arts
   == render 'pictures/list'

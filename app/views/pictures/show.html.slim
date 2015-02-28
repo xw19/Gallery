@@ -29,3 +29,12 @@
     = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
       = f.input :body, as: :text
       = f.button :submit
+
+  h6 class="hreport" Report
+  .report
+    - report = @picture.reports.new
+    = simple_form_for report, data: {confirm: "Are you sure to report this picture ?" } do |f|
+      = f.input :reason, label: "Why do think that this image must be reported ?"
+      = f.input :reportable_id, as: :hidden, value: report.reportable_id
+      = f.input :reportable_type, as: :hidden, value: report.reportable_type
+      = f.button :submit

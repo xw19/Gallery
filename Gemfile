@@ -38,6 +38,7 @@ gem 'font-awesome-sass'
 gem 'will_paginate'
 gem 'puma'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'activeadmin', github: 'activeadmin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

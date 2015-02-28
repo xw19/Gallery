@@ -123,3 +123,20 @@ a {
   float: right;
   margin: 4px;
 }
+.hreport, .hreport_comment {
+  font-size: 14px;
+  color: red;
+  opacity: 0.5;
+  margin-top: -15px;
+}
+.report, .report_comment {
+  input, textarea {
+    font-size: 10px;
+    border: 1px solid black;
+  }
+  label {
+    font-size: 10px;
+    display: block;
+  }
+  margin: 10px;
+}

@@ -21,3 +21,21 @@
         = comment.user.id
     p = comment.body
     p = time_ago_in_words(comment.created_at) + " ago"
+    h6 class="hreport_comment" style="float: right; font-size:12px;" Report
+    .report_comment style="float:right;"
+      - report = @picture.reports.new
+      = simple_form_for report, data: {confirm: "Are you sure to report this comment ?" } do |f|
+        = f.input :reason, label: "Why do think that this comment must be reported ?"
+        = f.input :reportable_id, as: :hidden, value: report.reportable_id
+        = f.input :reportable_type, as: :hidden, value: report.reportable_type
+        = f.button :submit
+
+javascript:
+  $(".report_comment").css('display', 'none');
+  $(".hreport_comment").on ("click", function(event) {
+    $(this).next().toggle(function() {
+      $(this).next().css("display", "block");
+    }, function() {
+      $(this).next().css("display", "none");
+    });
+  });
