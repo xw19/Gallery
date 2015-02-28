@@ -3,8 +3,7 @@ class CategoriesController < ApplicationController
   before_action :check_admin, except: [:index, :show]
 
   def index
-    @q = Category.ransack(params[:q])
-    @categories = @q.result(distinct: true).includes(:pictures).order('name asc')
+    @categories = Category.order('name ASC')
   end
 
   def new
