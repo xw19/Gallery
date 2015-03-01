@@ -5,7 +5,8 @@
 body {
   font-family: 'Raleway', sans-serif;
   color: #261901;
-  @include background-image(radial-gradient( #ADA205, #805E23));
+  //@include background-image(radial-gradient( #ADA205, #805E23));
+  background-image: image-url("http://i60.tinypic.com/v45av6.jpg");
 }
 header {
   font-family: 'Roboto', sans-serif;
