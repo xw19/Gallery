@@ -1,9 +1,9 @@
 header.navigation {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-color: gainsboro !default;
+  $base-border-color: #876004 !default;
   $base-border-radius: 3px !default;
-  $base-accent-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $base-accent-color: #5A4106 !default;
+  $dark-gray: #5A4106 !default;
   $large-screen: em(860) !default;
 
   a {
@@ -26,7 +26,8 @@ header.navigation {
   $navigation-submenu-width: 12em;
   $horizontal-bar-mode: $large-screen;
 
-  background-color: $navigation-background;
+  //background-color: $navigation-background;
+  @include background-image(radial-gradient(#5A4106, #876004));
   border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;

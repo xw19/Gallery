@@ -42,7 +42,7 @@ cards {
 
   .card-image {
     overflow: hidden;
-    max-height: 150px;
+    height: 150px;
 
     img {
       @include transition (all 0.2s ease-in-out);

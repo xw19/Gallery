@@ -13,3 +13,8 @@ html
     = render 'layouts/flash'
     == yield
     = render 'layouts/footer'
+    javascript:
+      $(".report").hide();
+      $('.hreport').on("click", function(event) {
+        $(this).next().toggle();
+      });

@@ -19,8 +19,8 @@
       - else
         | Anynomous
         = comment.user.id
-    p = comment.body
-    p = time_ago_in_words(comment.created_at) + " ago"
+    p class="comment_body" = comment.body
+    p class="comment_time" = time_ago_in_words(comment.created_at) + " ago"
     h6 class="hreport_comment" style="float: right; font-size:12px;" Report
     .report_comment style="float:right;"
       - report = @picture.reports.new
