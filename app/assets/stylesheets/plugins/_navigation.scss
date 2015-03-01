@@ -27,7 +27,7 @@ header.navigation {
   $horizontal-bar-mode: $large-screen;
 
   //background-color: $navigation-background;
-  @include background-image(radial-gradient(#5A4106, #876004));
+  @include background-image(radial-gradient(#875F13, #412C04));
   border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;

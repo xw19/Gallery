@@ -4,8 +4,8 @@
 }
 body {
   font-family: 'Raleway', sans-serif;
-  color: #4B4022;
-  @include background-image(radial-gradient( #F7FB0A, #CD8E18));
+  color: #261901;
+  @include background-image(radial-gradient( #ADA205, #805E23));
 }
 header {
   font-family: 'Roboto', sans-serif;
@@ -166,7 +166,7 @@ td {
 }
 
 .ad-img {
-  width: 75%;
+  width: 80%;
   margin: 0 12.5%;
   height: 100%;
 }
