@@ -2,16 +2,13 @@
   h1 = @picture.name
   table class="photo_desc"
     tr
-      td
-        strong Description:
+      td Description:
       td = @picture.description if @picture.description
     tr
-      td
-        strong Category:
+      td Category:
       td = link_to @picture.category.name, @picture.category
     tr
-      td
-        strong Uploaded by:
+      td Uploaded by:
       td
         - if @picture.user.personal
           = link_to @picture.user.personal.first_name, @picture.user.personal
