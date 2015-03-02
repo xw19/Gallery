@@ -1,4 +1,4 @@
-= will_paginate @pictures
+= paginate @pictures
 .cards-wrapper
   .cards
     - @pictures.each do |picture|
@@ -10,4 +10,4 @@
             = picture.name
           .card-copy
             = picture.description
-= will_paginate @pictures
+= paginate @pictures

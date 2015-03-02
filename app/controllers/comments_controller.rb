@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = @picture.comments.build(comment_params)
     @comment.user = current_user
     @comment.save
-    @comments = @picture.comments.order("created_at DESC").paginate(page: params[:page], per_page: 5)
+    @comments = @picture.comments.order("created_at DESC").page(params[:page])
     respond_to do |format|
       format.html { redirect_to @picture }
       format.js
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    @comments = @picture.comments.order("created_at DESC")
+    @comments = @picture.comments.order("created_at DESC").page(params[:page])
     respond_to do |format|
       format.html { redirect_to @picture }
       format.js

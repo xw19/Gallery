@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.friendly.find(params[:id])
-    @pictures = @category.pictures.paginate(page: params[:page], per_page: 9)
+    @pictures = @category.pictures.page(params[:page]).per(9)
   end
 
   private

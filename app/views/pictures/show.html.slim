@@ -24,6 +24,7 @@
   h3 Comments
   .comments#comments
     = render "comments"
+    = paginate @comments, remote: true
   .form-container
     = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
       = f.input :body, as: :text, label: "Comment"

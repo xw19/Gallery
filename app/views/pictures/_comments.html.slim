@@ -29,8 +29,6 @@
         = f.input :reportable_id, as: :hidden, value: report.reportable_id
         = f.input :reportable_type, as: :hidden, value: report.reportable_type
         = f.button :submit
-= will_paginate @comments
-
 javascript:
   $(".report_comment").css('display', 'none');
   $(".hreport_comment").on ("click", function(event) {
