@@ -19,6 +19,8 @@
     .pic-tools
         = link_to "Edit", edit_picture_path(@picture)
         = link_to "Destroy", picture_path(@picture), method: "delete", data: { confirm: 'Are you sure ?' }
+  .ad-box
+    img src="http://placehold.it/800x100&text=[ad1]" class="ad-img" width="800" height="100"
   h3 Comments
   .comments#comments
     = render "comments"
@@ -34,4 +36,4 @@
       = f.input :reason, label: "Why do think that this image must be reported ?"
       = f.input :reportable_id, as: :hidden, value: report.reportable_id
       = f.input :reportable_type, as: :hidden, value: report.reportable_type
-      = f.button :submit
+      = f.button :submit, class: "comment-btn"

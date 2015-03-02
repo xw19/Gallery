@@ -2,6 +2,7 @@ cards {
   @include display(flex);
   @include flex-wrap(wrap);
   @include justify-content(space-between);
+  @include clearfix;
 }
 
 .card {
@@ -40,6 +41,9 @@ cards {
   position: relative;
   position: relative;
   color: #000;
+  a {
+    display: block;
+  }
 
   .card-image {
     overflow: hidden;

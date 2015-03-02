@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 
   def index
     @q = Picture.ransack(params[:q])
-    @pictures = @q.result(distinct: true).includes(:comments)
+    @pictures = @q.result(distinct: true).includes(:comments).paginate(page: params[:page], per_page: 9)
   end
 
   def new
@@ -45,6 +45,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+    @comments = @picture.comments.paginate(page: params[:page], per_page: 5).order("created_at DESC")
   end
 
   private
