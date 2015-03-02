@@ -27,7 +27,7 @@
     = render "comments"
   .form-container
     = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
-      = f.input :body, as: :text
+      = f.input :body, as: :text, label: "Comment"
       = f.button :submit
 
   h6 class="hreport" Report

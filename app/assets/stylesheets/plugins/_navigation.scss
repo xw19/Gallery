@@ -2,12 +2,15 @@ header.navigation {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: #876004 !default;
   $base-border-radius: 3px !default;
-  $base-accent-color: #5A4106 !default;
-  $dark-gray: #5A4106 !default;
+  $base-accent-color: #743B10 !default;
+  $dark-gray: #743B10 !default;
   $large-screen: em(860) !default;
 
   a {
+    font-size: 17px;
+    font-weight: 900;
     text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.7);
   }
   //////////////////////////////////////////////////////////////////////////////////
 
@@ -27,8 +30,8 @@ header.navigation {
   $horizontal-bar-mode: $large-screen;
 
   //background-color: $navigation-background;
-  @include background-image(radial-gradient(#875F13, #412C04));
-  border-bottom: 1px solid darken($navigation-background, 10);
+  @include linear-gradient(#F08B3D, #582C0B);
+  border-bottom: 1px solid darken(#743B10, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;

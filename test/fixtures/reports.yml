@@ -3,11 +3,11 @@
 one:
   reason: MyText
   user_id: 1
-  reportable_id: 
-  reportable_type: Reportable
+  reportable_id: 3
+  reportable_type: "Picture"
 
 two:
   reason: MyText
   user_id: 1
-  reportable_id: 
+  reportable_id:
   reportable_type: Reportable

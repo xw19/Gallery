@@ -1,16 +1,17 @@
-.hero
-  .hero-inner
-    a.hero-logo href=""
-      img alt=("Logo Image") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" /
-    .hero-copy
-      h1 Awesome Art Gallery
-      p Several masterpieces of art by different artists worldwide
-    a href="" class="button" Learn More
-.grid-items
-  - @categories.each do |category|
-    = link_to(category, html_options = {class: 'grid-item'}) do
-      img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
-      h2 = category.name
-      p = category.description
-      div class="#{category.purity} purity"
-        = category.purity
+.main
+  .hero
+    .hero-inner
+      a.hero-logo href=""
+        img alt=("Logo Image") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" /
+      .hero-copy
+        h1 Awesome Art Gallery
+        p Several masterpieces of art by different artists worldwide
+      a href="" class="button" Learn More
+  .grid-items
+    - @categories.each do |category|
+      = link_to(category, html_options = {class: 'grid-item'}) do
+        img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
+        h2 = category.name
+        p = category.description
+        div class="#{category.purity} purity"
+          = category.purity

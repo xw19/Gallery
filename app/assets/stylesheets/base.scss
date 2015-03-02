@@ -11,12 +11,6 @@ body {
 header {
   font-family: 'Roboto', sans-serif;
 }
-a {
-  h2 {
-    color: #fff;
-  }
-  color: #4B4022;
-}
 td {
   padding: 7px;
 }
@@ -26,9 +20,16 @@ td {
 .main {
   @include outer-container;
   padding: 10px 10px;
-  a:hover {
-    background-color: #3C3219;
-    color: #FDB603;
+  a {
+    h2 {
+      color: #fff;
+    }
+    color: #0C4311;
+
+    &:hover {
+      background-color: #3C3219;
+      color: #FDB603;
+    }
   }
 }
 .purity {
@@ -145,11 +146,14 @@ td {
 }
 .hreport, .hreport_comment {
   font-size: 14px;
-  color: red;
-  opacity: 0.5;
+  color: #302514;
   margin-top: -15px;
 }
 .report, .report_comment {
+  @include radial-gradient(#CB9133, #72572A);
+  width: 180px;
+  padding: 5px;
+  border: 1px dotted #000;
   input, textarea {
     font-size: 10px;
     border: 1px solid black;
@@ -157,6 +161,7 @@ td {
   label {
     font-size: 10px;
     display: block;
+    color: #fff;
   }
   margin: 10px;
 }
