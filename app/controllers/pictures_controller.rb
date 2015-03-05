@@ -27,7 +27,7 @@ class PicturesController < ApplicationController
   end
 
   def update
-    @picture = Picture.friendly.find(params[:id])
+    @picture = Picture.find(params[:id])
     if @picture.update(picture_params)
       flash[:success] = "picture updated"
       redirect_to @picture
