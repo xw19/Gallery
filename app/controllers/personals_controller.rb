@@ -19,7 +19,7 @@ class PersonalsController < ApplicationController
 
   def show
     @personal = Personal.find(params[:id])
-    @pictures = @personal.user.pictures
+    @pictures = @personal.user.pictures.page(params[:page])
   end
 
   def edit

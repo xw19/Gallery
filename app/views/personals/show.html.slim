@@ -7,7 +7,7 @@
       i class="fa fa-female fa-5x"
     - else
       i class="fa fa-male fa-5x"
-  table
+  table class="photo_desc"
     tr
       td First Name:
       td = @personal.first_name
@@ -31,7 +31,7 @@
     .pic-tools
         = link_to "Edit", edit_personal_path(@personal)
         = link_to "Destroy", personal_path(@personal), method: "delete", data: { confirm: 'Are you sure ?' }
-  h6 class="hreport" Report
+  h6 class="hreport profile_report" Report
   .report
     - report = @personal.reports.new
     = simple_form_for report, data: {confirm: "Are you sure to report this profile ?" } do |f|

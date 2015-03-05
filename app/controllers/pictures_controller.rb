@@ -45,7 +45,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
-    @comments = @picture.comments.order("created_at DESC").page(params[:page])
+    @comments = @picture.comments.order("created_at DESC").limit(10)
   end
 
   private

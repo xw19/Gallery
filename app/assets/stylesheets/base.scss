@@ -6,7 +6,9 @@ body {
   font-family: 'Raleway', sans-serif;
   color: #261901;
   //@include background-image(radial-gradient( #ADA205, #805E23));
-  background-image: image-url("http://i60.tinypic.com/v45av6.jpg");
+  background-image: image-url("http://i61.tinypic.com/30cupa1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 header {
   font-family: 'Roboto', sans-serif;
@@ -151,6 +153,9 @@ td {
   font-size: 14px;
   color: #302514;
   margin-top: -15px;
+}
+.profile_report {
+  margin: 20px;
 }
 .report, .report_comment {
   @include radial-gradient(#CB9133, #72572A);
