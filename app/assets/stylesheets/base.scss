@@ -9,6 +9,7 @@ body {
   background-image: image-url("http://i61.tinypic.com/30cupa1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: 100% 100%;
 }
 header {
   font-family: 'Roboto', sans-serif;
@@ -193,4 +194,8 @@ td {
 }
 .cards-wrapper {
   min-height: 280px;
+}
+.right-nav {
+  display: inline-block;
+  float: right;
 }
