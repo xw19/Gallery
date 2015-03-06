@@ -2,7 +2,9 @@
   = simple_form_for @personal do |f|
     = f.input :first_name
     = f.input :last_name
-    = f.input :date_of_birth, as: :date
+    = f.input :date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 13,
+                              order: [:day, :month, :year]
     = f.input :gender, collection: [["Male", "M"], ["Female", "F"]], as: :radio_buttons
     = f.input :avatar, as: :file
     = f.input :about_me, as: :text
