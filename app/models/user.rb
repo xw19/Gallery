@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,  :omniauth_providers => [:facebook]
   has_many :pictures
   has_many :comments
+  has_many :albums
   has_one :personal, dependent: :destroy
 
   def personal_exists?

@@ -3,5 +3,6 @@
     = f.input :name, wrapper_html: { class: 'input_field' }
     = f.input :description, as: :text, wrapper_html: { id: 'input_field' }
     = f.input :photo, as: :file,  wrapper_html: { class: 'input_field' }
-    = f.input :category_id, collection: Category.all.map {|category| [category.name, category.id]}, wrapper_html: { class: 'input_field' }, prompt: "Select Category" 
+    = f.input :album, collection: current_user.albums { |album| [album.name, album.id]  }
+    = f.input :category_id, collection: Category.all.map {|category| [category.name, category.id]}, wrapper_html: { class: 'input_field' }, prompt: "Select Category"
     = f.button :submit, class: "submit_button"

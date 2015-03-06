@@ -1,0 +1,17 @@
+.main
+  - @albums.each do |album|
+    - if album.pictures.count >= 1
+      = link_to album do
+        .card
+          .card-image
+            = image_tag album.pictures.first.photo_url(:thumb)
+          .card-header
+            strong = album.name
+            <span> by: </span>
+            - if album.user.personal
+              = album.user.personal.name
+            - else
+              span Anynomous
+              = album.user.id
+          .card-copy
+            = album.about
