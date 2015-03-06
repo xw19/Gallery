@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305103318) do
+ActiveRecord::Schema.define(version: 20150306055125) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 20150305103318) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "albums", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.text     "about",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -104,8 +114,10 @@ ActiveRecord::Schema.define(version: 20150305103318) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "user_id",     limit: 4
+    t.integer  "album_id",    limit: 4
   end
 
+  add_index "pictures", ["album_id"], name: "index_pictures_on_album_id", using: :btree
   add_index "pictures", ["category_id"], name: "index_pictures_on_category_id", using: :btree
   add_index "pictures", ["user_id"], name: "index_pictures_on_user_id", using: :btree
 
@@ -148,9 +160,11 @@ ActiveRecord::Schema.define(version: 20150305103318) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "albums", "users"
   add_foreign_key "comments", "pictures"
   add_foreign_key "comments", "users"
   add_foreign_key "personals", "users"
+  add_foreign_key "pictures", "albums"
   add_foreign_key "pictures", "categories"
   add_foreign_key "pictures", "users"
 end
