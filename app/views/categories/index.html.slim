@@ -6,7 +6,7 @@
       .hero-copy
         h1 Awesome Art Gallery
         p Several masterpieces of art by different artists worldwide
-      a href="" class="button" Learn More
+      a href="/pictures" class="button" Browse
   .grid-items
     - @categories.each do |category|
       = link_to(category, html_options = {class: 'grid-item'}) do
