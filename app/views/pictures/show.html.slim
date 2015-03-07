@@ -25,10 +25,11 @@
   h3 Comments
   .comments#comments
     = render "comments"
-  .form-container
-    = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
-      = f.input :body, as: :text, label: "Comment"
-      = f.button :submit
+  - if user_signed_in?
+    .form-container
+      = simple_form_for([@picture, @picture.comments.build], remote: true) do |f|
+        = f.input :body, as: :text, label: "Comment"
+        = f.button :submit
   h6 class="hreport" Report
   .report
     - report = @picture.reports.new
