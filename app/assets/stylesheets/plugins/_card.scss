@@ -69,6 +69,7 @@ cards {
   }
 
   .card-copy {
+    min-height: 50px;
     font-size: 0.9em;
     line-height: 1.5em;
     padding: ($base-spacing / 2) ($base-spacing / 2);
