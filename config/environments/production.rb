@@ -82,6 +82,7 @@ Rails.application.configure do
   config.action_mailer.mailgun_settings = {
         api_key: 'key-378772ceacdfd6a02bdc7fd4522cb373',
         domain: 'awesomeartgallery.in'
+  }
 end
 
 Rails.application.routes.default_url_options[:host] = 'awesomeartgallery.in'
