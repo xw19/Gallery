@@ -35,21 +35,11 @@ gem 'mini_magick'
 gem 'devise'
 gem 'font-awesome-sass'
 gem 'kaminari'
-# gem 'puma'
-# gem 'foreman'
+gem 'mailgun_rails'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'activeadmin', github: 'activeadmin'
 gem 'newrelic_rpm'
 gem 'omniauth-facebook'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

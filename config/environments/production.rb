@@ -76,8 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_deliveries = false
+  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.perform_deliveries = false
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+        api_key: 'key-378772ceacdfd6a02bdc7fd4522cb373',
+        domain: 'awesomeartgallery.in'
 end
 
 Rails.application.routes.default_url_options[:host] = 'awesomeartgallery.in'

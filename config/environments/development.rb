@@ -36,7 +36,12 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :letter_opener
+
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+        api_key: 'key-378772ceacdfd6a02bdc7fd4522cb373',
+        domain: 'awesomeartgallery.in'
+}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
