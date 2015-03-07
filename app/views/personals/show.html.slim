@@ -1,12 +1,12 @@
 .main
   h1 Profile
   - unless @personal.avatar.blank?
-    = image_tag @personal.avatar
+    = image_tag @personal.avatar, alt: @personal.first_name, class: "pic-left"
   - else
     - if @personal.gender == "F"
-      i class="fa fa-female fa-5x"
+      i class="fa fa-female fa-5x pic-left"
     - else
-      i class="fa fa-male fa-5x"
+      i class="fa fa-male fa-5x pic-left"
   table class="photo_desc"
     tr
       td First Name:
