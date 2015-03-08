@@ -7,7 +7,7 @@
     tr
       td Owner:
       - if @album.user.personal
-        td = link_to  @album.user.personal.name, @album.user.personal
+        td = link_to  @album.user.personal.first_name, @album.user.personal
       - else
         td
           | Anynomouns
