@@ -21,6 +21,8 @@ td {
   padding: 10px;
   h1 {
     text-transform: capitalize;
+    font-size: 35px;
+    text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
   }
   a {
     h2 {
@@ -34,42 +36,49 @@ td {
     }
   }
 }
-.purity {
-  @include border-width(2px);
-  @include border-style(solid);
-  @include border-top-radius(5px);
-  @include border-right-radius(5px);
-  @include border-bottom-radius(5px);
-  @include border-left-radius(5px);
-  text-align: center;
-  width: 90px;
-  margin: 5px auto;
-  text-transform: uppercase;
-  background-color: #848484;
-}
-.safe {
-  @include border-color(green);
-  color: green;
-}
-.sketchy {
-  @include border-color(yellow);
-  color: yellow;
-}
-
-.nsfw {
-  @include border-color(red);
-  color: red;
-}
+// .purity {
+//   @include border-width(2px);
+//   @include border-style(solid);
+//   @include border-top-radius(5px);
+//   @include border-right-radius(5px);
+//   @include border-bottom-radius(5px);
+//   @include border-left-radius(5px);
+//   text-align: center;
+//   width: 90px;
+//   margin: 5px auto;
+//   text-transform: uppercase;
+//   background-color: #848484;
+// }
+// .safe {
+//   @include border-color(green);
+//   color: green;
+// }
+// .sketchy {
+//   @include border-color(yellow);
+//   color: yellow;
+// }
+//
+// .nsfw {
+//   @include border-color(red);
+//   color: red;
+// }
 .photo {
   width: 100%;
   border: 2px solid #333;
 }
 .photo_desc {
-  @include radial-gradient(#EA9A10, #7A5006);
+  background-color: #cb7021;
   border-radius: 5px;
-  border: 1px solid #372607;
+  border: 5px solid #3f2604;
   margin: 10px 0;
-  color: #3f2005;
+  color: #2a1c04;
+  font-weight: bold;
+  box-shadow: 0px 2px 0px rgba(255,255,255,.3), 0px -2px 0px rgba(0,0,0,.7);
+
+  a {
+    color: #08076d;
+    text-decoration: overline;
+  }
 }
 
 .flash {
