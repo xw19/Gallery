@@ -1,17 +1,16 @@
 .main
-  - @albums.each do |album|
-    - if album.pictures.count >= 1
-      = link_to album do
-        .card
-          .card-image
-            = image_tag album.pictures.first.photo_url(:thumb)
-          .card-header
-            strong = album.name
-            <span> by: </span>
-            - if album.user.personal
-              = album.user.personal.first_name
-            - else
-              span Anynomous
-              = album.user.id
-          .card-copy
-            = album.about
+  .front-tile-items
+    - @albums.each do |album|
+      - if album.pictures.count >= 1
+        = link_to album do
+          .front-tile
+            = link_to album do
+              = image_tag album.pictures.first.photo_url(:thumb)
+              p.link
+                span = album.name
+                <span> by: </span>
+                - if album.user.personal
+                  = album.user.personal.first_name
+                - else
+                  span Anynomous
+                  = album.user.id

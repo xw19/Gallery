@@ -1,13 +1,9 @@
 = paginate @pictures
-.cards-wrapper
-  .cards
-    - @pictures.each do |picture|
-      = link_to picture do
-        .card
-          .card-image
-            = image_tag picture.photo_url(:thumb)
-          .card-header
-            = picture.name
-          .card-copy
-            = picture.description
+.front-tile-items
+  - @pictures.each do |picture|
+    = link_to picture do
+      .front-tile
+        = link_to picture do
+          = image_tag picture.photo_url(:thumb)
+          p.link = picture.name
 = paginate @pictures

@@ -3,12 +3,13 @@
 }
 .front-tile-items {
   @include clearfix;
-  margin: 20px 0;
+  margin: 10px 0;
   .front-tile {
     @include front-tile-columns(4);
     float: left;
     padding: 5px;
     height: 230px;
+    margin: 5px 0;
     img {
       border-radius: 5px 5px 0 0;
       border-width: 1px;
@@ -33,6 +34,16 @@
       border-width: 1px;
       border-color: #634d0a;
       border-style: solid;
+    }
+  }
+  @media (max-width: 800px ) {
+    .front-tile {
+      @include front-tile-columns(6);
+    }
+  }
+  @media (max-width: 500px ) {
+    .front-tile {
+      @include front-tile-columns(12);
     }
   }
 }
