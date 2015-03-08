@@ -7,11 +7,9 @@
         h1 Awesome Art Gallery
         p Several masterpieces of art by different artists worldwide
       a href="/pictures" class="button" Browse
-  .grid-items
-    - @categories.each do |category|
-      = link_to(category, html_options = {class: 'grid-item'}) do
-        img alt="" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png" /
-        h2 = category.name
-        p = category.description
-        div class="#{category.purity} purity"
-          = category.purity
+  .front-tile-items
+    -  FrontTile.all.each do |front_tile|
+      .front-tile
+        = link_to front_tile.link_url do
+          = image_tag front_tile.image_url, alt: front_tile.title
+          p.link = front_tile.title
