@@ -9,7 +9,7 @@
             strong = album.name
             <span> by: </span>
             - if album.user.personal
-              = album.user.personal.name
+              = album.user.personal.first_name
             - else
               span Anynomous
               = album.user.id
