@@ -14,21 +14,22 @@ header.navigation role="banner"
           = link_to "Search", search_path
         li.nav-link
           = link_to "Albums", albums_path
-        .right-nav
-          - if user_signed_in?
-            li.nav-link
-              - if current_user.personal_exists? && current_user.personal.id
-                  = link_to "Profile", personal_path(current_user.personal)
-              - else
-                = link_to "Create profile", new_personal_path
-            li.nav-link
-              = link_to "Logout", destroy_user_session_path, method: "delete", class: "nav-btns"
-            li.nav-link
-              = link_to "New picture", new_picture_path, class: "nav-btns"
-            li.nav-link
-              = link_to "New album", new_album_path, class: "nav-btns"
-          - else
-            li.nav-link
-              = link_to "Sign up", new_user_registration_path, class: "nav-btns"
-            li.nav-link
-              = link_to "Sign in", new_user_session_path, class: "nav-btns"
+        - if user_signed_in?
+          li.nav-link
+            - if current_user.personal_exists? && current_user.personal.id
+                = link_to "Profile", personal_path(current_user.personal)
+            - else
+              = link_to "Create profile", new_personal_path
+          li.nav-link
+            = link_to "New picture", new_picture_path, class: "nav-btns"
+          li.nav-link
+            = link_to "New album", new_album_path, class: "nav-btns"
+          li.nav-link
+            = link_to "Change password", edit_user_registration_path, class: "nav-btns"
+          li.nav-link
+            = link_to "Logout", destroy_user_session_path, method: "delete", class: "nav-btns"
+        - else
+          li.nav-link
+            = link_to "Sign up", new_user_registration_path, class: "nav-btns"
+          li.nav-link
+            = link_to "Sign in", new_user_session_path, class: "nav-btns"

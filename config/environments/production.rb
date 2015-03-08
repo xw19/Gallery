@@ -80,18 +80,9 @@ Rails.application.configure do
   # config.action_mailer.perform_deliveries = false
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {
-        api_key: 'key-378772ceacdfd6a02bdc7fd4522cb373',
+        api_key: ENV['API_KEY'],
         domain: 'awesomeartgallery.in'
   }
 end
 
 Rails.application.routes.default_url_options[:host] = 'awesomeartgallery.in'
-# ActionMailer::Base.smtp_settings = {
-#   :address        => 'smtp.sendgrid.net',
-#   :port           => '587',
-#   :authentication => :plain,
-#   :user_name      => ENV['SENDGRID_USERNAME'],
-#   :password       => ENV['SENDGRID_PASSWORD'],
-#   :domain         => 'heroku.com',
-#   :enable_starttls_auto => true
-# }

@@ -4,14 +4,22 @@ html
     meta charset="utf-8"
     title Gallery
     meta name="viewport" content="width=device-width, initial-scale=1"
-    <meta name="google-site-verification" content="yHVsfX-Pm8YdqmCwVb81vimKO-uBA7Q9LECeI02YMgw" />
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'
     link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    = render 'layouts/header'
+    = render 'layouts/flash'
+    == yield
+    = render 'layouts/footer'
     javascript:
+      $(".report").hide();
+      $('.hreport').on("click", function(event) {
+        $(this).next().toggle();
+      });
+
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1096681013692137',
@@ -27,12 +35,3 @@ html
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
-    = render 'layouts/header'
-    = render 'layouts/flash'
-    == yield
-    = render 'layouts/footer'
-    javascript:
-      $(".report").hide();
-      $('.hreport').on("click", function(event) {
-        $(this).next().toggle();
-      });
