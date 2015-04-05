@@ -8,7 +8,7 @@
       td Category:
       td = link_to @picture.category.name, @picture.category
     tr
-      td Uploaded by:
+      td Created by:
       td
         - if @picture.user.personal
           = link_to @picture.user.personal.first_name, @picture.user.personal
