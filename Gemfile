@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use mysql as the database for Active Record
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,16 +28,27 @@ gem 'bourbon'
 gem 'neat'
 #for uploading
 gem 'carrierwave', '~> 0.10.0'
+# for simpifiying forms
 gem 'simple_form'
+# for generating slugs
 gem 'friendly_id', '~> 5.1.0'
+# for resizing of photos
 gem 'mini_magick'
+# for authentication
 gem 'devise'
+# for font-icons svgs
 gem 'font-awesome-sass'
+# for nesting
 gem 'kaminari'
+# for sending mails
 gem 'mailgun_rails'
+# for searching
 gem 'ransack', github: 'activerecord-hackery/ransack'
+# for admin purposes
 gem 'activeadmin', github: 'activeadmin'
+# for new relic dashboard
 gem 'newrelic_rpm'
+# for authentication using facebook
 gem 'omniauth-facebook'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,7 +61,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+#n for database
+gem 'pg'
+
+gem 'rails_12factor'
